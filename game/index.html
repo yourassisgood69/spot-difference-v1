@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot the Difference — Garden Café, Harbour &amp; Night Market</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>Spot the Difference</h1>
+  <p class="subtitle">Two pictures that look the same — but they are not. Find every change before the clock runs out.</p>
+</header>
+
+<section class="hud" aria-label="Game status">
+  <div class="hud-block">
+    <div id="round-label" class="round-label">Round 1 of 3 — Garden Café</div>
+    <div id="round-place" class="round-place">A sunny garden café</div>
+  </div>
+  <div class="hud-block timer-block">
+    <div class="timer-row"><span id="timer-value">90s</span><span class="timer-word">left</span></div>
+    <div class="timer-bar"><div id="timer-fill" class="timer-fill"></div></div>
+  </div>
+  <div class="hud-block">
+    <div class="stat"><span class="stat-label">Score</span><span id="score-value" class="stat-value">0</span></div>
+    <div class="stat"><span class="stat-label">Combo</span><span id="combo-value" class="stat-value">—</span></div>
+  </div>
+  <div class="hud-block found-block">
+    <div id="found-value" class="found-value">0 / 8 found · 8 left</div>
+    <div id="found-dots" class="dots" aria-label="Differences found"></div>
+  </div>
+  <div class="hud-block buttons">
+    <button id="hint-btn" class="hud-btn">Hint (H) · <span id="hint-count">3</span> left</button>
+    <button id="sound-btn" class="hud-btn">Sound: on</button>
+    <button id="restart-btn-top" class="hud-btn">Restart (R)</button>
+  </div>
+</section>
+
+<main class="stage">
+  <figure class="panel">
+    <figcaption>Left picture</figcaption>
+    <canvas id="panel-left" width="560" height="400"></canvas>
+  </figure>
+  <figure class="panel">
+    <figcaption>Right picture — the changes are hiding here too</figcaption>
+    <canvas id="panel-right" width="560" height="400"></canvas>
+  </figure>
+</main>
+
+<div id="toast" class="toast" role="status"></div>
+
+<div id="overlay" class="overlay">
+  <div id="overlay-card" class="card"></div>
+</div>
+
+<footer class="foot">
+  <p>Click a difference on either picture to mark it on both. A miss costs 3 seconds. A hint costs 50 points. Keys: <b>H</b> hint · <b>R</b> restart · <b>M</b> sound · <b>Enter</b> start / next.</p>
+  <p class="fine">Every scene is drawn by this page's own code — no photos, no borrowed art, no network requests.</p>
+</footer>
+
+<script src="src/sounds.js"></script>
+<script src="src/rounds.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/state.js"></script>
+<script src="src/render.js"></script>
+<script src="src/input.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
